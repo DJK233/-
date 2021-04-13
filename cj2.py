@@ -10,6 +10,7 @@ title = "天光所有新通知啦"
 def get_webInfo(url):
     head = {}
     head['User-Agent']='Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19' 
+    req = urllib.request.Request(url,headers=head)
     rsp = urllib.request.urlopen(req)
     html = rsp.read().decode('utf8','ignore')
     html = BeautifulSoup(html,'html.parser')
