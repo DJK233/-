@@ -9,7 +9,8 @@ title = "天光所有新通知啦"
 #定义一个名为get_webInfo的函数，传入参数url
 def get_webInfo(url):
     head = {}
-    head['User-Agent']='Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19' 
+    head['User-Agent']='Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0' 
+    req = urllib.request.Request(url,headers=head)
     rsp = urllib.request.urlopen(req)
     html = rsp.read().decode('utf8','ignore')
     html = BeautifulSoup(html,'html.parser')
